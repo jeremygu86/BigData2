@@ -24,6 +24,12 @@ Here: https://www.apache.org/dyn/closer.cgi?path=/kafka/0.8.2.2/kafka_2.10-0.8.2
 
 
 
+### Set up Docker
+```
+    export DOCKER_IP=$(docker-machine ip vm0)
+```
+
+
 
 
 
@@ -133,3 +139,10 @@ Excerpt:
 
 client = KafkaClient(['{}:9092'.format(docker_ip)])
 client.ensure_topic_exists("topic2")
+
+
+
+
+
+
+
