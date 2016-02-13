@@ -4,13 +4,15 @@
 ### Download the client
 Here: https://www.apache.org/dyn/closer.cgi?path=/kafka/0.8.2.2/kafka_2.10-0.8.2.2.tgz
 
-wget http://mirror.tcpdiag.net/apache/kafka/0.8.2.2/kafka_2.10-0.8.2.2.tgz
-cp kafka_2.10-0.8.2.2.tgz kafka.tgz
-rm kafka_2.10-0.8.2.2.tgz
-tar xzf "kafka.tgz"
-rm 	"kafka.tgz"	
-cp -r kafka_2.10-0.8.2.2 kafka
-rm -rf kafka_2.10-0.8.2.2
+```
+    wget http://mirror.tcpdiag.net/apache/kafka/0.8.2.2/kafka_2.10-0.8.2.2.tgz
+	cp kafka_2.10-0.8.2.2.tgz kafka.tgz
+	rm kafka_2.10-0.8.2.2.tgz
+	tar xzf "kafka.tgz"
+	rm 	"kafka.tgz"	
+	cp -r kafka_2.10-0.8.2.2 kafka
+	rm -rf kafka_2.10-0.8.2.2
+```
 
 ### Environment
 
