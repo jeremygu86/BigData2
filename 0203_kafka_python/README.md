@@ -16,11 +16,11 @@ Here: https://www.apache.org/dyn/closer.cgi?path=/kafka/0.8.2.2/kafka_2.10-0.8.2
 ```
 
 ### Environment
-
-export KAFKA_HOME="/Users/wenxiaogu/Dropbox/2-Bigdata/bigdata\ 220/big\ summary\ 2016\ -\ interview/bigdata2/0203_kafka_python/kafka"
-
-export DOCKER_IP=$(docker-machine ip vm0)
-
+```
+    export KAFKA_HOME="/Users/wenxiaogu/Dropbox/2-Bigdata/bigdata220/big_summary_2016/BigData2/0203_kafka_python/kafka"
+    cd $KAFKA_HOME
+    export DOCKER_IP=$(docker-machine ip vm0)
+```
 
 
 
