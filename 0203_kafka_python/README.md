@@ -1,5 +1,6 @@
 # Kafka with python examples
-## Modified from the class notes
+### Modified from the class notes
+### Wenxiao Jeremy Gu, FEB 2016
 
 ### Download the client
 Here: https://www.apache.org/dyn/closer.cgi?path=/kafka/0.8.2.2/kafka_2.10-0.8.2.2.tgz
