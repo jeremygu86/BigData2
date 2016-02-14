@@ -1,25 +1,10 @@
-# Kafka with python examples
-- Wenxiao Jeremy Gu, FEB 2016
-- Modified for AWS EC2 machine. Based on class notes and Google search.
+# Apache Kafka with python examples
 
-.. image:: https://img.shields.io/badge/kafka-0.8.2-brightgreen.svg
-    :target: https://kafka-python.readthedocs.org/compatibility.html
-.. image:: https://img.shields.io/badge/python-2.7-blue.svg
-    :target: https://pypi.python.org/pypi/kafka-python
+- Author Wenxiao Jeremy Gu, FEB 2016
 
-   
-   
-.. image:: https://img.shields.io/badge/kafka-0.9%2C%200.8.2%2C%200.8.1%2C%200.8-brightgreen.svg
-    :target: https://kafka-python.readthedocs.org/compatibility.html
-.. image:: https://img.shields.io/pypi/pyversions/kafka-python.svg
-    :target: https://pypi.python.org/pypi/kafka-python
-.. image:: https://coveralls.io/repos/dpkp/kafka-python/badge.svg?branch=master&service=github
-    :target: https://coveralls.io/github/dpkp/kafka-python?branch=master
-.. image:: https://travis-ci.org/dpkp/kafka-python.svg?branch=master
-    :target: https://travis-ci.org/dpkp/kafka-python
-.. image:: https://img.shields.io/badge/license-Apache%202-blue.svg
-    :target: https://github.com/dpkp/kafka-python/blob/master/LICENSE
+- Modified for OSX 10.11.3 and AWS EC2 machine (RHEL 6.5). 
 
+- Based on class notes and Google search.
 
  
 #### Introduction
@@ -28,11 +13,22 @@ This document talks about the following topics:
 
 - What's Apache Kafka?
 
+- How to use Kafka (on mac)?
+
 - How to use Kafka with python?
 
-- How to use Docker Container with Kafka?
+- How to use Docker Container with Kafka (on mac)?
 
 - Solution of Homework 2 in the class
+
+- Troubleshooting and lesson learned
+
+- Next steps
+
+- References
+
+- Appendix
+
 
 ### Part 1: What's Apache Kafka
 
@@ -46,21 +42,21 @@ _**Kafka** is a distributed, partitioned, replicated commit log service. It prov
 
 #### Terminology on messaging
 
-- **Topics:**_Kafka maintains feeds of messages in categories called topics._   
+- **Topics:** _Kafka maintains feeds of messages in categories called topics._   
 
-- **Producers:**_We'll call processes that publish messages to a Kafka topic producers._   
+- **Producers:** _We'll call processes that publish messages to a Kafka topic producers._   
 
-- **Consumers:**_We'll call processes that subscribe to topics and process the feed of published messages consumers._   
+- **Consumers:** _We'll call processes that subscribe to topics and process the feed of published messages consumers._   
 
-- **Broker:**_Kafka is run as a cluster comprised of one or more servers each of which is called a broker._   
+- **Broker:** _Kafka is run as a cluster comprised of one or more servers each of which is called a broker._   
 
 #### Use Cases
 
 Here are some popular use cases from the Kafka official documentation:
 
-1. **Metrics:** Kafka is often used for operational monitoring data. This involves aggregating statistics from distributed applications to produce centralized feeds of operational data. 
+1. **Metrics:**  Kafka is often used for operational monitoring data. This involves aggregating statistics from distributed applications to produce centralized feeds of operational data. 
 
-2. **Website Activity Tracking:** The original use case for Kafka was to be able to rebuild a user activity tracking pipeline as a set of real-time publish-subscribe feeds. This means site activity (page views, searches, or other actions users may take) is published to central topics with one topic per activity type
+2. **Website Activity Tracking:**  The original use case for Kafka was to be able to rebuild a user activity tracking pipeline as a set of real-time publish-subscribe feeds. This means site activity (page views, searches, or other actions users may take) is published to central topics with one topic per activity type
 
 3. **Log Aggregation**: Many people use Kafka as a replacement for a log aggregation solution. Log aggregation typically collects physical log files off servers and puts them in a central place (a file server or HDFS perhaps) for processing. 
 
@@ -75,8 +71,11 @@ Here are some popular use cases from the Kafka official documentation:
 
 We use Kafka here to do the homework, _ _, 
 
-### Download the client
-Here: https://www.apache.org/dyn/closer.cgi?path=/kafka/0.8.2.2/kafka_2.10-0.8.2.2.tgz
+#### Download the client
+
+Note that we use scala 2.10 in this example. We download _kafka 0.8.2.2_ version under _scala 2.10_.
+
+[Reference: Kafka Downloading page](https://www.apache.org/dyn/closer.cgi?path=/kafka/0.8.2.2/kafka_2.10-0.8.2.2.tgz)
 
 ```
     wget http://mirror.tcpdiag.net/apache/kafka/0.8.2.2/kafka_2.10-0.8.2.2.tgz
@@ -88,16 +87,18 @@ Here: https://www.apache.org/dyn/closer.cgi?path=/kafka/0.8.2.2/kafka_2.10-0.8.2
 	rm -rf kafka_2.10-0.8.2.2
 ```
 
-### Environment
+#### Environment
+
+We also downloaded Kafka 0.9 but will not be shown as example here in this document. May the force be with you. 
+
 ```
     ## KAFKA 0.8.2
     export KAFKA_HOME="/Users/wenxiaogu/Dropbox/2-Bigdata/bigdata220/big_summary_2016/BigData2/0203_kafka_python/kafka"
     
-    ## KAFKA 0.9/0
+    ## KAFKA 0.9.0
     export KAFKA_HOME2="/Users/wenxiaogu/Dropbox/2-Bigdata/bigdata220/big_summary_2016/BigData2/0203_kafka_python/kafka"
 
 ```
-
 
 ### Start Kafka
 
