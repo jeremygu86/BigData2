@@ -1,10 +1,18 @@
 # Kafka with python examples
-### Modified for AWS. Based on class notes locally on single machine.
-### Wenxiao Jeremy Gu, FEB 2016
+- Wenxiao Jeremy Gu, FEB 2016
+- Modified for AWS EC2 machine. Based on class notes and Google search.
+
+.. image:: https://img.shields.io/badge/kafka-0.8.2-brightgreen.svg
+    :target: https://kafka-python.readthedocs.org/compatibility.html
+.. image:: https://img.shields.io/badge/python-2.7-blue.svg
+    :target: https://pypi.python.org/pypi/kafka-python
+
+    
+#### Introduction
 
 This document talks about the following topics:
 
-- What's Kafka?
+- What's Apache Kafka?
 
 - How to use Kafka with python?
 
@@ -12,32 +20,46 @@ This document talks about the following topics:
 
 - Solution of Homework 2 in the class
 
-### Part 1: What's Kafka
+### Part 1: What's Apache Kafka
 
 This is the second big data class in a certification from UW. The class talks about the data pipeline with focus on spark, kafka and storm. So before we go into the details, intuitively, Kafka would do something like a post office.
+
+We here talk about the high-level definition, terminology and the use cases.
 
 #### Official definition
 
 _**Kafka** is a distributed, partitioned, replicated commit log service. It provides the functionality of a messaging system, but with a unique design._ 
 
-
 #### Terminology on messaging
 
-_
-- Kafka maintains feeds of messages in categories called topics.
+- **Topics:**_Kafka maintains feeds of messages in categories called topics._   
 
-- We'll call processes that publish messages to a Kafka topic producers.
+- **Producers:**_We'll call processes that publish messages to a Kafka topic producers._   
 
-- We'll call processes that subscribe to topics and process the feed of published messages consumers..
+- **Consumers:**_We'll call processes that subscribe to topics and process the feed of published messages consumers._   
 
-- Kafka is run as a cluster comprised of one or more servers each of which is called a broker. 
-_   
+- **Broker:**_Kafka is run as a cluster comprised of one or more servers each of which is called a broker._   
 
+#### Use Cases
+
+Here are some popular use cases from the Kafka official documentation:
+
+1. **Metrics:** Kafka is often used for operational monitoring data. This involves aggregating statistics from distributed applications to produce centralized feeds of operational data. 
+
+2. **Website Activity Tracking:** The original use case for Kafka was to be able to rebuild a user activity tracking pipeline as a set of real-time publish-subscribe feeds. This means site activity (page views, searches, or other actions users may take) is published to central topics with one topic per activity type
+
+3. **Log Aggregation**: Many people use Kafka as a replacement for a log aggregation solution. Log aggregation typically collects physical log files off servers and puts them in a central place (a file server or HDFS perhaps) for processing. 
+
+4. **Stream Processing**: Many users end up doing stage-wise processing of data where data is consumed from topics of raw data and then aggregated, enriched, or otherwise transformed into new Kafka topics for further consumption. For example a processing flow for article recommendation might crawl article content from RSS feeds and publish it to an "articles" topic.
+
+5. **Event Sourcing**: Event sourcing is a style of application design where state changes are logged as a time-ordered sequence of records. Kafka's support for very large stored log data makes it an excellent backend for an application built in this style. 
 
 [Reference: Kafka Homepage](http://kafka.apache.org/documentation.html#quickstart)
 
 
+### Part 2: How to use Kafka with python?
 
+We use Kafka here to do the homework, _ _, 
 
 ### Download the client
 Here: https://www.apache.org/dyn/closer.cgi?path=/kafka/0.8.2.2/kafka_2.10-0.8.2.2.tgz

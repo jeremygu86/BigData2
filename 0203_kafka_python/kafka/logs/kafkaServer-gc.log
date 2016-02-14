@@ -18,3 +18,4 @@ CommandLine flags: -XX:+CMSClassUnloadingEnabled -XX:+CMSScavengeBeforeRemark -X
 2016-02-14T10:27:58.072+0800: 1617.906: [CMS-concurrent-sweep: 0.000/0.000 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
 2016-02-14T10:27:58.072+0800: 1617.906: [CMS-concurrent-reset-start]
 2016-02-14T10:27:58.078+0800: 1617.912: [CMS-concurrent-reset: 0.005/0.005 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+2016-02-14T11:24:04.219+0800: 4432.499: [GC (Allocation Failure) 2016-02-14T11:24:04.219+0800: 4432.499: [ParNew: 285759K->6522K(314560K), 0.0069800 secs] 285759K->6522K(1013632K), 0.0072286 secs] [Times: user=0.04 sys=0.00, real=0.01 secs] 
