@@ -1,6 +1,6 @@
 # Apache Kafka with python examples
 
-- **Author: Wenxiao Jeremy Gu**, Feb 2016
+- **Author: Wenxiao Jeremy Gu** <jeremygu86@gmail.com>, Feb 2016
 
 - Modified for **OSX 10.11.3** and **AWS EC2 machine (RHEL 6.5)**. 
 
