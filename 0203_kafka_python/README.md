@@ -12,6 +12,17 @@ This document talks about the following topics:
 
 - Solution of Homework 2 in the class
 
+### Part 1: What's Kafka
+
+This is the second big data class in a certification from UW. The class talks about the data pipeline with focus on spark, kafka and storm. So before we go into the details, intuitively, Kafka would do something like a post office.
+
+#### Official definition
+
+_**Kafka** is a distributed, partitioned, replicated commit log service. It provides the functionality of a messaging system, but with a unique design._ 
+
+
+
+[Reference: Kafka Homepage](http://kafka.apache.org/documentation.html#quickstart)
 
 
 
