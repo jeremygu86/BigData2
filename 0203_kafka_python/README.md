@@ -1,10 +1,12 @@
 # Apache Kafka with python examples
 
-- **Author: Wenxiao Jeremy Gu** <jeremygu86@gmail.com>, Feb 2016
+- **Author: Wenxiao Jeremy Gu** 
 
-- Modified for **OSX 10.11.3** and **AWS EC2 machine (RHEL 6.5)**. 
+- <jeremygu86@gmail.com>
 
 - Based on class notes and Google search.
+
+- Feb 2016
 
  
 #### Introduction
@@ -88,6 +90,8 @@ Note that we use scala 2.10 in this example. We download _kafka 0.8.2.2_ version
 ```
 
 #### Environment
+
+This doc is modified for **OSX 10.11.3** and **AWS EC2 machine (RHEL 6.5)**. The class note was for windows 7.
 
 We also downloaded Kafka 0.9 but will not be shown as example here in this document. May the force be with you. 
 
