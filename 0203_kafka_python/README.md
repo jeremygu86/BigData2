@@ -1,6 +1,20 @@
 # Kafka with python examples
-### Modified from the class notes
+### Modified for AWS. Based on class notes locally on single machine.
 ### Wenxiao Jeremy Gu, FEB 2016
+
+This document talks about the following topics:
+
+- What's Kafka?
+
+- How to use Kafka with python?
+
+- How to use Docker Container with Kafka?
+
+- Solution of Homework 2 in the class
+
+
+
+
 
 ### Download the client
 Here: https://www.apache.org/dyn/closer.cgi?path=/kafka/0.8.2.2/kafka_2.10-0.8.2.2.tgz
@@ -17,14 +31,69 @@ Here: https://www.apache.org/dyn/closer.cgi?path=/kafka/0.8.2.2/kafka_2.10-0.8.2
 
 ### Environment
 ```
+    ## KAFKA 0.8.2
     export KAFKA_HOME="/Users/wenxiaogu/Dropbox/2-Bigdata/bigdata220/big_summary_2016/BigData2/0203_kafka_python/kafka"
-    cd $KAFKA_HOME
-    export DOCKER_IP=$(docker-machine ip vm0)
+    
+    ## KAFKA 0.9/0
+    export KAFKA_HOME2="/Users/wenxiaogu/Dropbox/2-Bigdata/bigdata220/big_summary_2016/BigData2/0203_kafka_python/kafka"
+
+```
+
+
+### Start Kafka
+
+#### localhost (works)
+
+See http://kafka.apache.org/07/quickstart.html
+
+bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+bin/kafka-topics.sh --list --zookeeper localhost:2181
+
+head -n5 gfa25.csv| bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test 
+
+#### Howtownworks AWS (fails)
+
+http://hortonworks.com/hadoop-tutorial/simulating-transporting-realtime-events-stream-apache-kafka/#section_3
+ip: 54.191.159.137
+export DOCKER_IP=54.191.159.137
+
+Local ssh connecting to remote
+
+$KAFKA_HOME/bin/kafka-topics.sh --zookeeper $DOCKER_IP:2181 --list
+head -n5 gfa25.csv | $KAFKA_HOME/bin/kafka-console-producer.sh --topic topicNew --broker-list $DOCKER_IP:2181 
+
+$KAFKA_HOME/bin/kafka-topics.sh --create --zookeeper $DOCKER_IP:2181 --replication-factor 1 --partitions 1 --topic truckevent  
+
+
+On the remote machine
+```
+export PATH=$PATH:/usr/hdp/current/kafka-broker/bin
+
+kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+kafka-topics.sh --list --zookeeper localhost:2181
+
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic test --from-beginning
+
+head -n5 gfa25.csv| kafka-console-producer.sh --broker-list 54.191.159.137:9092 --topic test
 ```
 
 
 
-### Set up Docker
+If you reboot your cluster, you must restart the Ambari Server and all the Ambari Agents manually.
+
+Log in to each machine in your cluster separately
+
+On the Ambari Server host machine:
+
+    sudo ambari-server restart
+
+On each host in your cluster:
+
+    sudo ambari-agent restart
+
+
+### Set up Docker 
 ```
     export DOCKER_IP=$(docker-machine ip vm0)
 ```
