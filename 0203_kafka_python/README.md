@@ -6,8 +6,17 @@
 
 - Based on class notes and Google search.
 
-- Feb 2016
+- **Latest update:** Feb 14, 2016
 
+### Checklist of HW2
+
+1. On Mac (Success)
+
+2. On Hortonworks/AWS (optional. Not success)
+
+3. Python? (In progress)
+
+4. Docker build (Planning)
  
 #### Introduction
 
@@ -69,7 +78,7 @@ Here are some popular use cases from the Kafka official documentation:
 [Reference: Kafka Homepage](http://kafka.apache.org/documentation.html#quickstart)
 
 
-### Part 2: How to use Kafka with python?
+### Part 2: How to use Kafka?
 
 We use Kafka here to do the homework, _ _, 
 
@@ -127,7 +136,7 @@ Open another terminal to create a topic called **test**.
 	 bin/kafka-topics.sh --list --zookeeper localhost:2181
 ```
 
-Open another two terminals for producer and consumer. 
+**Send a single message:** Open another two terminals for producer and consumer. 
 
 ```
 	 bin/kafka-console-producer.sh --zookeeper localhost:2181 --topic test 
@@ -135,13 +144,12 @@ Open another two terminals for producer and consumer.
 ```
 
 
-If you're interested, we open another terminal to do some basic batch. The port 9092 is Kafka's default port. The port 2181 is the default port for Zookeeper.
+**Send multiple messages to multiple topics in one request:** If you're interested, we open another terminal to do some basic batch. The port 9092 is Kafka's default port. The port 2181 is the default port for Zookeeper.
  
 ```
 	 crul http://www.ers.usda.gov/datafiles/International_Food_Security/AllCountries/gfa25.csv -o gfa25.csv
 	 head -n5 gfa25.csv| bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test 
 ```
-
 
 
 ##### Howtownworks AWS (fails)
