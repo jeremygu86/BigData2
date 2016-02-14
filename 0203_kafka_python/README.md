@@ -100,18 +100,47 @@ We also downloaded Kafka 0.9 but will not be shown as example here in this docum
 
 ```
 
-### Start Kafka
+#### Start Kafka
 
-#### localhost (works)
+##### localhost (works)
 
-See http://kafka.apache.org/07/quickstart.html
+[Reference: Complete tutorial](http://kafka.apache.org/07/quickstart.html)
 
-bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
-bin/kafka-topics.sh --list --zookeeper localhost:2181
+The above reference has the complete tutorial. Here we just give some feedback because some part of the tutorials are not very clear. 
 
-head -n5 gfa25.csv| bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test 
+We need to open five terminals. Two for the servers. One for producers and one for consumer. The other is for us to create/list topics.
 
-#### Howtownworks AWS (fails)
+Open two terminals for each of the commands below.
+
+```
+	 bin/zookeeper-server-start.sh config/zookeeper.properties
+	 bin/kafka-server-start.sh config/server.properties
+```
+
+Open another terminal to create a topic called **test**.
+```
+	 bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+	 bin/kafka-topics.sh --list --zookeeper localhost:2181
+```
+
+Open another two terminals for producer and consumer. 
+
+```
+	 bin/kafka-console-producer.sh --zookeeper localhost:2181 --topic test 
+	 bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic test --from-beginning
+```
+
+
+If you're interested, we open another terminal to do some basic batch. The port 9092 is Kafka's default port. The port 2181 is the default port for Zookeeper.
+ 
+```
+	 crul http://www.ers.usda.gov/datafiles/International_Food_Security/AllCountries/gfa25.csv -o gfa25.csv
+	 head -n5 gfa25.csv| bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test 
+```
+
+
+
+##### Howtownworks AWS (fails)
 
 http://hortonworks.com/hadoop-tutorial/simulating-transporting-realtime-events-stream-apache-kafka/#section_3
 ip: 54.191.159.137
