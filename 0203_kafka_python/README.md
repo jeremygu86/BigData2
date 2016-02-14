@@ -1,8 +1,8 @@
 # Apache Kafka with python examples
 
-- Author Wenxiao Jeremy Gu, FEB 2016
+- **Author: Wenxiao Jeremy Gu**, Feb 2016
 
-- Modified for OSX 10.11.3 and AWS EC2 machine (RHEL 6.5). 
+- Modified for **OSX 10.11.3** and **AWS EC2 machine (RHEL 6.5)**. 
 
 - Based on class notes and Google search.
 
@@ -11,17 +11,17 @@
 
 This document talks about the following topics:
 
-- What's Apache Kafka?
+- What's **Apache Kafka**?
 
-- How to use Kafka (on mac)?
+- How to use **Kafka** (on mac)?
 
-- How to use Kafka with python?
+- How to use **Kafka with python**?
 
-- How to use Docker Container with Kafka (on mac)?
+- How to use **Docker Container with Kafka** (on mac)?
 
-- Solution of Homework 2 in the class
+- **Solution** of Homework 2 in the class
 
-- Troubleshooting and lesson learned
+- **Troubleshooting** and lesson learned
 
 - Next steps
 
