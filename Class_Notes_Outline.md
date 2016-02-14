@@ -1,5 +1,5 @@
 # BigData2 (Winter 2016)
-#### Wenxiao Jeremy Gu
+#### Author: Wenxiao Jeremy Gu
 #### University of Washington, Downtown Seattle campus
 
 - 2016-01-06 (week 1): Review of BigData1 (Fall 2015)

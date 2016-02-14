@@ -21,6 +21,18 @@ This is the second big data class in a certification from UW. The class talks ab
 _**Kafka** is a distributed, partitioned, replicated commit log service. It provides the functionality of a messaging system, but with a unique design._ 
 
 
+#### Terminology on messaging
+
+_
+- Kafka maintains feeds of messages in categories called topics.
+
+- We'll call processes that publish messages to a Kafka topic producers.
+
+- We'll call processes that subscribe to topics and process the feed of published messages consumers..
+
+- Kafka is run as a cluster comprised of one or more servers each of which is called a broker. 
+_   
+
 
 [Reference: Kafka Homepage](http://kafka.apache.org/documentation.html#quickstart)
 
